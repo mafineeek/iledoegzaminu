@@ -7,7 +7,10 @@
     <title>Ile do egzaminu?</title>
 </head>
 <body>
-    <p id="countdown"></p>
+    <div id="box">
+        <h1>Do pierwszego egzaminu 2022 pozostało <b>tylko:</b></h1>
+        <p id="countdown"></p>
+    </div>
 
     <script>
         let countDownDate = new Date("May 24, 2022 09:00:00").getTime();
@@ -32,6 +35,14 @@
         }
         }, 1000);
     </script>
+
+    <style>
+        #box{
+            position: absolute;
+            left: 45%;
+            top: 35%;
+        }
+    </style>
 
 </body>
 </html>
