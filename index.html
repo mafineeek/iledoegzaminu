@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Ile do egzaminu?</title>
 </head>
+
 <body>
     <div id="box">
         <h1>Do pierwszego egzaminu 2022 pozostało <b>tylko:</b></h1>
@@ -15,34 +20,38 @@
     <script>
         let countDownDate = new Date("May 24, 2022 09:00:00").getTime();
 
-        let interval = setInterval(function() {
+        let interval = setInterval(function () {
 
-        let now = new Date().getTime();
+            let now = new Date().getTime();
 
-        let distance = countDownDate - now;
+            let distance = countDownDate - now;
 
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s <br>Psst, to tylko " + Math.floor(days / 7) + " piątków 😐";
 
-        if (distance < 0) {
-            clearInterval(interval);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
-        }
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
         }, 1000);
     </script>
 
     <style>
-        #box{
+        #box {
             position: absolute;
-            left: 45%;
+            left: 30%;
             top: 35%;
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
         }
     </style>
 
 </body>
+
 </html>
