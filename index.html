@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>Ile do egzaminu?</title>
+</head>
+<body>
+    <p id="countdown"></p>
+
+    <script>
+        let countDownDate = new Date("May 24, 2022 09:00:00").getTime();
+
+        let interval = setInterval(function() {
+
+        let now = new Date().getTime();
+
+        let distance = countDownDate - now;
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(interval);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+        }, 1000);
+    </script>
+
+</body>
+</html>
